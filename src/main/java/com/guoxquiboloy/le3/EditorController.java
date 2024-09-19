@@ -8,6 +8,9 @@ import javafx.scene.control.TextArea;
 public class EditorController {
     @FXML TextArea typeArea;
     @FXML Button saveButton;
+    @FXML Button fontButton; 
+    @FXML Button fontSizeButton;
+    @FXML Button textColorButton;
 
     @FXML
     private void Save() throws IOException{
