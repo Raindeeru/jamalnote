@@ -8,6 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class MainController{
+    
 
     @FXML Button newFileButton;
     @FXML Button loadButton;
