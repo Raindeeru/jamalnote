@@ -1,6 +1,7 @@
 package com.guoxquiboloy.le3;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,9 +18,13 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("editor"));
+        scene = new Scene(loadFXML("main"));
         stage.setScene(scene);
         stage.show();
+    }
+
+    public static void switchToEditor()throws IOException {
+        App.setRoot("editor");
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -30,7 +35,8 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
-
+    
+    
     public static void main(String[] args) {
         launch();
     }
