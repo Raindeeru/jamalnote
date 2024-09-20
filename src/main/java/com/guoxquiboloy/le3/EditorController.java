@@ -16,7 +16,8 @@ public class EditorController {
     @FXML TextArea typeArea;
     @FXML Button saveButton;
     @FXML Button fontButton; 
-    @FXML Button fontSizeButton;
+    @FXML Button fontSizePlusButton;
+    @FXML Button fontSizeMinButton;
     @FXML Button textColorButton;
     //Changes mad by Payor, Matthew Josh G.
     private static TextArea staticTypeArea;
