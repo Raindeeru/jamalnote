@@ -129,6 +129,7 @@ public class EditorController {
         }
         typeArea.setText(textFromFile);
         reader.close();
+        BackupandRestore.clearBackup();
     }
 
     @FXML

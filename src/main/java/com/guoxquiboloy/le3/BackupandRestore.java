@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.io.FileReader;
+import java.io.FileWriter;
+
 //Main Program
 public class BackupandRestore 
 {
@@ -35,8 +38,18 @@ public class BackupandRestore
         }
     }
     //Checks for backup
-    public static boolean backupChecker()
+    public static boolean backupChecker () throws IOException
     {
-        return new File(BACKUP_FILE).exists();
+        File file = new File(BACKUP_FILE);
+        FileReader reader = new FileReader(file);
+        boolean backexists = reader.read() != -1;
+        reader.close();
+        return backexists;
+    }
+
+    public static void clearBackup() throws IOException{
+        FileWriter clearer = new FileWriter(BACKUP_FILE);
+        clearer.write("");
+        clearer.close();
     }
 }
