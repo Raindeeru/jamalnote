@@ -27,6 +27,15 @@ public class App extends Application {
         App.setRoot("editor");
     }
 
+    //For Loading Files
+    public static void switchToEditor(String path)throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("editor.fxml"));
+        Parent editor = fxmlLoader.load();
+        EditorController editorController = fxmlLoader.getController();
+        editorController.setFilePath(path);
+        scene.setRoot(editor); 
+    }
+
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }

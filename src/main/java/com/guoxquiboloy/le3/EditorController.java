@@ -17,9 +17,10 @@ public class EditorController {
     @FXML Button fontSizeButton;
     @FXML Button textColorButton;
 
+    private String filePath;
+
     @FXML
     private void Save() throws IOException{
-        System.out.println("Pinindot Mo Save");
         FileChooser saveFile = new FileChooser();
         saveFile.getExtensionFilters().add(
             new FileChooser.ExtensionFilter("TEXT", "*.txt")
@@ -33,5 +34,12 @@ public class EditorController {
             writer.write(text);
             writer.close();
         }
+    }
+    public void setEditorText(String text){
+        typeArea.setText(text);
+    }
+
+    public void setFilePath(String path){
+        filePath = path;
     }
 }
