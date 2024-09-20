@@ -15,6 +15,8 @@ public class MainController{
     @FXML Button newFileButton;
     @FXML Button loadButton;
     @FXML Button closeButton;
+    @FXML Button recentFileButton;
+    @FXML VBox recentFilesBar;
 
     Stage stage;
     
@@ -43,5 +45,9 @@ public class MainController{
     private void Close() throws IOException{
         stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
+    }
+
+    @FXML void LoadRecentFile() throws IOException{
+        
     }
 }

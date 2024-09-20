@@ -171,6 +171,8 @@ public class EditorController {
         double size = font.getSize();  
         typeArea.setFont(Font.font(fontStyle, size));
     }
-
+    @FXML private void BackToMenu() throws IOException{
+        App.setRoot("main");
+    }
 
 }
