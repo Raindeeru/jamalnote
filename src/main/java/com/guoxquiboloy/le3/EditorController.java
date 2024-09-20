@@ -22,7 +22,6 @@ import javafx.stage.Stage;
 public class EditorController {
     @FXML TextArea typeArea;
     @FXML Button saveButton;
-    @FXML MenuButton fontButton; 
     @FXML MenuItem fontStyle1; 
     @FXML MenuItem fontStyle2; 
     @FXML MenuItem fontStyle3; 
@@ -85,10 +84,6 @@ public class EditorController {
     }
 
     @FXML
-    private void fontChange() throws IOException{
-    }
-
-    @FXML
     private void styleOne() throws IOException{
         Font newFont = Font.font("Arial"); 
         typeArea.setFont(newFont);
@@ -114,7 +109,7 @@ public class EditorController {
 
     @FXML
     private void styleFive() throws IOException{
-        Font newFont = Font.font("Open Sans"); 
+        Font newFont = Font.font("Georgia"); 
         typeArea.setFont(newFont);
     }
 

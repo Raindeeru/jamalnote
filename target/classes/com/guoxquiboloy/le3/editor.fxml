@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox alignment="CENTER" prefHeight="405.0" prefWidth="721.0" spacing="20.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.guoxquiboloy.le3.EditorController">
     <children>
@@ -15,8 +16,7 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="101.0" text="Font" textAlignment="CENTER" />
-                  <MenuButton fx:id="fontButton" mnemonicParsing="false" onAction="#fontChange" prefHeight="25.0" prefWidth="118.0" text="MenuButton" textAlignment="CENTER">
+                  <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Font Style" textAlignment="CENTER">
                     <items>
                       <MenuItem fx:id="fontStyle1" mnemonicParsing="false" onAction="#styleOne" text="Arial" />
                       <MenuItem fx:id="fontStyle2" mnemonicParsing="false" onAction="#styleTwo" text="Calibri" />
@@ -60,7 +60,10 @@
          </children>
       </HBox>
       <Button fx:id="saveButton" mnemonicParsing="false" onAction="#Save" text="Save" />
-      <TextArea fx:id="typeArea" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="typeArea" prefHeight="200.0" prefWidth="200.0">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></TextArea>
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
