@@ -15,11 +15,21 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
+<<<<<<< HEAD
                   <TextField alignment="CENTER" prefHeight="25.0" prefWidth="63.0" text="Font " />
                   <MenuButton fx:id="fontButton" mnemonicParsing="false" onAction="#fontChange" prefHeight="25.0" prefWidth="118.0" text="MenuButton" textAlignment="CENTER">
                     <items>
                       <MenuItem mnemonicParsing="false" text="Arial" />
                       <MenuItem mnemonicParsing="false" text="Calibri" />
+=======
+                  <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="MenuButton" textAlignment="CENTER">
+                    <items>
+                      <MenuItem fx:id="fontStyle1" mnemonicParsing="false" onAction="#styleOne" text="Arial" />
+                      <MenuItem fx:id="fontStyle2" mnemonicParsing="false" onAction="#styleTwo" text="Calibri" />
+                        <MenuItem fx:id="fontStyle3" mnemonicParsing="false" onAction="#styleThree" text="Times New Roman" />
+                        <MenuItem fx:id="fontStyle4" mnemonicParsing="false" onAction="#styleFour" text="Roboto" />
+                        <MenuItem fx:id="fontStyle5" mnemonicParsing="false" onAction="#styleFive" text="Georgia" />
+>>>>>>> 23d01b9b8583aa5e1cfbd1d4fcc7594ea72b1b61
                     </items>
                      <padding>
                         <Insets right="10.0" />
@@ -32,9 +42,15 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
+<<<<<<< HEAD
                   <TextField alignment="CENTER" prefHeight="25.0" prefWidth="65.0" text="Font Size " />
                   <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" />
                   <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" />
+=======
+                  <Label prefHeight="17.0" prefWidth="69.0" text="Font Size " />
+                  <Button fx:id="fontSizePlusButton" mnemonicParsing="false" onAction="#fontSizePlus" prefHeight="25.0" prefWidth="25.0" text="+" />
+                  <Button fx:id="fontSizeMinButton" mnemonicParsing="false" onAction="#fontSizeMin" prefHeight="25.0" prefWidth="25.0" text="-" />
+>>>>>>> 23d01b9b8583aa5e1cfbd1d4fcc7594ea72b1b61
                </children>
                <padding>
                   <Insets left="10.0" right="10.0" />
@@ -45,10 +61,19 @@
                   <TextField text="Font Color" />
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
+<<<<<<< HEAD
                         <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
                         <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
                         <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
                         <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
+=======
+                        <Label prefHeight="17.0" prefWidth="75.0" text="Font Color" />
+                        <Button fx:id="colorButtonOne" mnemonicParsing="false" onAction="#colorOne" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #FFC0CB;" />
+                        <Button fx:id="colorButtonTwo" mnemonicParsing="false" onAction="#colorTwo" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #C3B1E1;" />
+                        <Button fx:id="colorButtonThree" mnemonicParsing="false" onAction="#colorThree" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #F89880;" />
+                        <Button fx:id="colorButtonFour" mnemonicParsing="false" onAction="#colorFour" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #ADD8E6;" />
+                        <Button fx:id="colorButtonFive" mnemonicParsing="false" onAction="#colorFive" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #000000;" />
+>>>>>>> 23d01b9b8583aa5e1cfbd1d4fcc7594ea72b1b61
                      </children>
                   </HBox>
                </children>
