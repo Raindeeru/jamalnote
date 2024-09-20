@@ -25,7 +25,7 @@ public class EditorController {
     @FXML MenuButton fontButton; 
     @FXML Button fontSizePlusButton;
     @FXML Button fontSizeMinButton;
-    @FXML Button textButtonOne;
+    @FXML Button colorButtonOne;
 
     //Changes mad by Payor, Matthew Josh G.
     private static TextArea staticTypeArea;
