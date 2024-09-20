@@ -138,7 +138,6 @@ public class EditorController {
     private void colorTwo() throws IOException{
         typeArea.setStyle("-fx-text-fill:  #C3B1E1;"); 
     }
-    
 
     @FXML
     private void colorThree() throws IOException{
