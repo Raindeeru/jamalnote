@@ -16,7 +16,7 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <MenuButton fx:id="fontButton" mnemonicParsing="false" onAction="#fontChange" prefHeight="25.0" prefWidth="118.0" text="MenuButton" textAlignment="CENTER">
+                  <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="MenuButton" textAlignment="CENTER">
                     <items>
                       <MenuItem fx:id="fontStyle1" mnemonicParsing="false" onAction="#styleOne" text="Arial" />
                       <MenuItem fx:id="fontStyle2" mnemonicParsing="false" onAction="#styleTwo" text="Calibri" />
