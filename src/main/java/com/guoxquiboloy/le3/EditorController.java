@@ -165,4 +165,12 @@ public class EditorController {
         typeArea.setStyle("-fx-text-fill:  #000000;"); 
     }
 
+    @FXML
+    private void newFont(String fontStyle) throws IOException{
+        Font font = typeArea.getFont(); 
+        double size = font.getSize();  
+        typeArea.setFont(Font.font(fontStyle, size));
+    }
+
+
 }
