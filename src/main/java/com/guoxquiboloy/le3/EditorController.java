@@ -71,11 +71,4 @@ public class EditorController {
         }
         typeArea.setText(textFromFile);
     }
-
-    @FXML
-    private void changeFont() {
-   
-    }
-
-
 }
