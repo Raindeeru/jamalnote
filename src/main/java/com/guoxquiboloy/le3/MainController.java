@@ -18,6 +18,10 @@ public class MainController{
 
     Stage stage;
     
+    @FXML
+    public void initialize(){
+        
+    }
 
     @FXML
     private void OpenNewFile() throws IOException{
@@ -29,6 +33,7 @@ public class MainController{
         FileChooser loader = new FileChooser();
         loader.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
         File fileToLoad = loader.showOpenDialog(stage);
+        RecentFileManager.addRecentFile(fileToLoad);
         if (fileToLoad != null) {
             App.switchToEditor(fileToLoad);
         }
