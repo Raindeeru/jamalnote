@@ -19,10 +19,10 @@
                   <MenuButton fx:id="fontButton" mnemonicParsing="false" onAction="#fontChange" prefHeight="25.0" prefWidth="118.0" text="MenuButton" textAlignment="CENTER">
                     <items>
                       <MenuItem fx:id="fontStyle1" mnemonicParsing="false" onAction="#styleOne" text="Arial" />
-                      <MenuItem mnemonicParsing="false" text="Calibri" />
-                        <MenuItem mnemonicParsing="false" text="Times New Roman" />
-                        <MenuItem mnemonicParsing="false" text="Verdana" />
-                        <MenuItem mnemonicParsing="false" text="Courier New" />
+                      <MenuItem fx:id="fontStyle2" mnemonicParsing="false" onAction="#styleTwo" text="Calibri" />
+                        <MenuItem fx:id="fontStyle3" mnemonicParsing="false" onAction="#styleThree" text="Times New Roman" />
+                        <MenuItem fx:id="fontStyle4" mnemonicParsing="false" onAction="#styleFour" text="Roboto" />
+                        <MenuItem fx:id="fontStyle5" mnemonicParsing="false" onAction="#styleFive" text="Open Sans" />
                     </items>
                      <padding>
                         <Insets right="10.0" />

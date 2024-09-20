@@ -24,6 +24,10 @@ public class EditorController {
     @FXML Button saveButton;
     @FXML MenuButton fontButton; 
     @FXML MenuItem fontStyle1; 
+    @FXML MenuItem fontStyle2; 
+    @FXML MenuItem fontStyle3; 
+    @FXML MenuItem fontStyle4; 
+    @FXML MenuItem fontStyle5; 
     @FXML Button fontSizePlusButton;
     @FXML Button fontSizeMinButton;
     @FXML Button colorButtonOne;
@@ -86,6 +90,32 @@ public class EditorController {
 
     @FXML
     private void styleOne() throws IOException{
+        Font newFont = Font.font("Arial"); 
+        typeArea.setFont(newFont);
+    }
+
+    @FXML
+    private void styleTwo() throws IOException{
+        Font newFont = Font.font("Calibri"); 
+        typeArea.setFont(newFont);
+    }
+
+    @FXML
+    private void styleThree() throws IOException{
+        Font newFont = Font.font("Times New Roman"); 
+        typeArea.setFont(newFont);
+    }
+
+    @FXML
+    private void styleFour() throws IOException{
+        Font newFont = Font.font("Roboto"); 
+        typeArea.setFont(newFont);
+    }
+
+    @FXML
+    private void styleFive() throws IOException{
+        Font newFont = Font.font("Open Sans"); 
+        typeArea.setFont(newFont);
     }
 
     @FXML
