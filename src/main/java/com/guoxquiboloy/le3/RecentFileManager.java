@@ -15,9 +15,6 @@ public class RecentFileManager {
         FileReader checker = new FileReader(recentsPath);
         List<String> paths = getPaths(new File(recentsPath));
         
-        if (checker.read() != -1) {
-            writer.write(',');
-        }
         for(String path: paths){
             System.out.println(path);
             System.out.println(file.getAbsolutePath());  
@@ -26,6 +23,9 @@ public class RecentFileManager {
                 checker.close();                      
                 return;
             }
+        }
+        if (checker.read() != -1) {
+            writer.write(',');
         }
 
         writer.write(file.getAbsolutePath());;
