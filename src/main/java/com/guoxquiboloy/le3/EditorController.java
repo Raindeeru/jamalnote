@@ -83,6 +83,7 @@ public class EditorController {
             textFromFile += (char)i;
         }
         typeArea.setText(textFromFile);
+        reader.close();
     }
 
     @FXML
