@@ -65,6 +65,7 @@ public class EditorController {
             writer.write(text);
             writer.close();
         }
+        RecentFileManager.addRecentFile(file);
     }
     public void setEditorText(String text){
         typeArea.setText(text);
