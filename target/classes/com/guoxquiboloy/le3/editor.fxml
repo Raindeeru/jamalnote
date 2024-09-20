@@ -48,7 +48,7 @@
                   <TextField text="Font Color" />
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
+                        <Button fx:id="textButtonOne" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
                         <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
                         <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />
                         <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" />

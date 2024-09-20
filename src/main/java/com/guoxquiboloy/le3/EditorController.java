@@ -25,7 +25,8 @@ public class EditorController {
     @FXML MenuButton fontButton; 
     @FXML Button fontSizePlusButton;
     @FXML Button fontSizeMinButton;
-    @FXML Button textColorButton;
+    @FXML Button textButtonOne;
+
     //Changes mad by Payor, Matthew Josh G.
     private static TextArea staticTypeArea;
     private File file;
@@ -81,12 +82,22 @@ public class EditorController {
     
     @FXML
     private void fontSizePlus() throws IOException{
-        
+        Font font = typeArea.getFont();
+        double size = font.getSize();
+        typeArea.setFont(Font.font(size + 1));
+
+        System.out.println("New font size is " + size);
     }
 
     @FXML
     private void fontSizeMin() throws IOException{
-        
+        Font font = typeArea.getFont();
+        double size = font.getSize();
+
+        if(size > 7)
+            typeArea.setFont(Font.font(size - 1));
+
+        System.out.println("New font size is " + size);
     }
 
 }
