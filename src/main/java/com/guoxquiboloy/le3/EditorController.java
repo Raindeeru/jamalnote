@@ -26,7 +26,6 @@ public class EditorController {
     @FXML Button fontSizePlusButton;
     @FXML Button fontSizeMinButton;
     @FXML Button textColorButton;
-    @FXML MenuItem font1;
     //Changes mad by Payor, Matthew Josh G.
     private static TextArea staticTypeArea;
     private File file;
@@ -77,7 +76,8 @@ public class EditorController {
 
     @FXML
     private void fontChange() throws IOException{
-        Font fontOne = new Font("Arial",12 );
-        font1.setOnAction(event -> typeArea.setFont(fontOne));
+        
     }
+
+
 }
