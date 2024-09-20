@@ -49,10 +49,10 @@
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Button fx:id="colorButtonOne" mnemonicParsing="false" onAction="#colorOne" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #FFC0CB;" />
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #C3B1E1;" />
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #F89880;" />
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #ADD8E6;" />
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #000000;" />
+                        <Button fx:id="colorButtonTwo" mnemonicParsing="false" onAction="#colorTwo" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #C3B1E1;" />
+                        <Button fx:id="colorButtonThree" mnemonicParsing="false" onAction="#colorThree" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #F89880;" />
+                        <Button fx:id="colorButtonFour" mnemonicParsing="false" onAction="#colorFour" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #ADD8E6;" />
+                        <Button fx:id="colorButtonFive" mnemonicParsing="false" onAction="#colorFive" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #000000;" />
                      </children>
                   </HBox>
                </children>

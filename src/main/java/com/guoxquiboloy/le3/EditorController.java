@@ -26,6 +26,10 @@ public class EditorController {
     @FXML Button fontSizePlusButton;
     @FXML Button fontSizeMinButton;
     @FXML Button colorButtonOne;
+    @FXML Button colorButtonTwo;
+    @FXML Button colorButtonThree;
+    @FXML Button colorButtonFour;
+    @FXML Button colorButtonFive;
 
     //Changes mad by Payor, Matthew Josh G.
     private static TextArea staticTypeArea;
@@ -102,7 +106,28 @@ public class EditorController {
 
     @FXML
     private void colorOne() throws IOException{
-        
+        typeArea.setStyle("-fx-text-fill: pink;"); 
+    }
+
+    @FXML
+    private void colorTwo() throws IOException{
+        typeArea.setStyle("-fx-text-fill: purple;"); 
+    }
+    
+
+    @FXML
+    private void colorThree() throws IOException{
+        typeArea.setStyle("-fx-text-fill: orange;"); 
+    }
+
+    @FXML
+    private void colorFour() throws IOException{
+        typeArea.setStyle("-fx-text-fill: lightblue;"); 
+    }
+
+    @FXML
+    private void colorFive() throws IOException{
+        typeArea.setStyle("-fx-text-fill: black;"); 
     }
 
 }
