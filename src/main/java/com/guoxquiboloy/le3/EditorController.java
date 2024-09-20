@@ -78,6 +78,15 @@ public class EditorController {
     private void fontChange() throws IOException{
         
     }
+    
+    @FXML
+    private void fontSizePlus() throws IOException{
+        
+    }
 
+    @FXML
+    private void fontSizeMin() throws IOException{
+        
+    }
 
 }

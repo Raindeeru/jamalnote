@@ -36,8 +36,8 @@
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <TextField alignment="CENTER" prefHeight="25.0" prefWidth="65.0" text="Font Size " />
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" />
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" />
+                  <Button fx:id="fontSizePlusButton" mnemonicParsing="false" onAction="#fontSizePlus" prefHeight="25.0" prefWidth="25.0" text="+" />
+                  <Button fx:id="fontSizeMinButton" mnemonicParsing="false" onAction="#fontSizeMin" prefHeight="25.0" prefWidth="25.0" text="-" />
                </children>
                <padding>
                   <Insets left="10.0" right="10.0" />
