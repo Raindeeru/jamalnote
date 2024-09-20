@@ -3,7 +3,6 @@ package com.guoxquiboloy.le3;
 import java.io.File;
 import java.io.IOException;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
@@ -22,7 +21,8 @@ public class MainController{
     
     @FXML
     public void initialize(){
-        
+        recentFilesBar.getChildren().add(new Button());
+        System.out.println(recentFileButton.getProperties());
     }
 
     @FXML
@@ -48,6 +48,6 @@ public class MainController{
     }
 
     @FXML void LoadRecentFile() throws IOException{
-        
+
     }
 }
