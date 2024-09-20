@@ -1,6 +1,8 @@
 package com.guoxquiboloy.le3;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -19,9 +21,17 @@ public class EditorController {
     private void Save() throws IOException{
         System.out.println("Pinindot Mo Save");
         FileChooser saveFile = new FileChooser();
+        saveFile.getExtensionFilters().add(
+            new FileChooser.ExtensionFilter("TEXT", "*.txt")
+        );
+
         String text = typeArea.getText();
         saveFile.setTitle("Hatdog");
         File file = saveFile.showSaveDialog(null);
-        file
+        FileWriter writer = new FileWriter(file);
+        if (file != null) {
+            writer.write(text);
+            writer.close();
+        }
     }
 }
