@@ -34,6 +34,7 @@ public class EditorController {
     @FXML Button colorButtonThree;
     @FXML Button colorButtonFour;
     @FXML Button colorButtonFive;
+    
 
     //Changes mad by Payor, Matthew Josh G.
     private static TextArea staticTypeArea;
@@ -85,31 +86,41 @@ public class EditorController {
 
     @FXML
     private void styleOne() throws IOException{
-        Font newFont = Font.font("Arial"); 
+        Font font = typeArea.getFont(); 
+        double size = font.getSize(); 
+        Font newFont = Font.font("Arial", size); 
         typeArea.setFont(newFont);
     }
 
     @FXML
     private void styleTwo() throws IOException{
-        Font newFont = Font.font("Calibri"); 
+        Font font = typeArea.getFont(); 
+        double size = font.getSize(); 
+        Font newFont = Font.font("Calibri", size); 
         typeArea.setFont(newFont);
     }
 
     @FXML
     private void styleThree() throws IOException{
-        Font newFont = Font.font("Times New Roman"); 
+        Font font = typeArea.getFont(); 
+        double size = font.getSize(); 
+        Font newFont = Font.font("Times New Roman", size); 
         typeArea.setFont(newFont);
     }
 
     @FXML
     private void styleFour() throws IOException{
-        Font newFont = Font.font("Roboto"); 
+        Font font = typeArea.getFont(); 
+        double size = font.getSize(); 
+        Font newFont = Font.font("Roboto", size); 
         typeArea.setFont(newFont);
     }
 
     @FXML
     private void styleFive() throws IOException{
-        Font newFont = Font.font("Georgia"); 
+        Font font = typeArea.getFont(); 
+        double size = font.getSize(); 
+        Font newFont = Font.font("Georgia", size); 
         typeArea.setFont(newFont);
     }
 
