@@ -77,13 +77,22 @@ public class App extends Application {
                 return "Backup Discarded";
             }
         });
-        Optional<String> result = dialog.showAndWait();
-        //Application will restore from backup
-        if (result.isPresent() && result.get().equals("Yes")) 
-        {
-            String backupContent = BackupandRestore.restoreUserWork();
-            EditorController.getTypeArea().setText(backupContent);
+        try{
+            boolean backupExist = BackupandRestore.backupChecker();
+            if(backupExist){
+                Optional<String> result = dialog.showAndWait();
+                //Application will restore from backup
+                System.out.println(result.get());
+                if (result.isPresent() && result.get().equals("Backup Restored")) 
+                {
+                    try{switchToEditor(new File("backup.txt"));}
+                    catch(IOException e){throw new RuntimeException(e);}
+                
+                }
+            }
         }
+        catch(IOException e){throw new RuntimeException(e);}
+        
     }
     //Create a backup when the application closes
     @Override
