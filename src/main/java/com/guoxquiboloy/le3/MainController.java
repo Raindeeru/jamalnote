@@ -2,6 +2,9 @@ package com.guoxquiboloy.le3;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
+import java.util.ArrayList;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -18,11 +21,27 @@ public class MainController{
     @FXML VBox recentFilesBar;
 
     Stage stage;
-    
+    List<File> recentFiles = new ArrayList<File>();
+    List<Button> recentFileButtons = new ArrayList<Button>();
+
     @FXML
-    public void initialize(){
-        recentFilesBar.getChildren().add(new Button());
-        System.out.println(recentFileButton.getProperties());
+    public void initialize() throws IOException{
+        File recentFile = new File("recentFiles.csv");
+        List<String> paths = RecentFileManager.getPaths(recentFile);
+        System.out.println(paths);
+        for(String path: paths){
+            File file = new File(path);
+            Button button = new Button(file.getName());
+            button.setPrefWidth(recentFileButton.getPrefWidth());
+            button.setPrefHeight(recentFileButton.getPrefHeight());
+            recentFilesBar.getChildren().add(button);
+            button.setOnAction(event -> {
+                try{LoadRecentFile(path);}
+                catch(IOException e){throw new RuntimeException(e);}
+            });
+            recentFiles.add(file);
+        }
+        recentFilesBar.getChildren().remove(recentFileButton);
     }
 
     @FXML
@@ -47,7 +66,12 @@ public class MainController{
         stage.close();
     }
 
-    @FXML void LoadRecentFile() throws IOException{
-
+    @FXML 
+    private void LoadRecentFile(String filePath) throws IOException{
+        File fileToLoad = new File(filePath);
+        RecentFileManager.addRecentFile(fileToLoad);
+        if (fileToLoad != null) {
+            App.switchToEditor(fileToLoad);
+        }
     }
 }
