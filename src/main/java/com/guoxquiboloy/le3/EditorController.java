@@ -14,6 +14,17 @@ public class EditorController {
     @FXML Button fontButton; 
     @FXML Button fontSizeButton;
     @FXML Button textColorButton;
+    //Changes mad by Payor, Matthew Josh G.
+    private static TextArea staticTypeArea;
+    @FXML
+    public void initialize() 
+    {
+        staticTypeArea = typeArea;
+    }
+    public static TextArea getTypeArea() 
+    {
+        return staticTypeArea;
+    }
 
     @FXML
     private void Save() throws IOException{
@@ -22,6 +33,6 @@ public class EditorController {
         String text = typeArea.getText();
         saveFile.setTitle("Hatdog");
         File file = saveFile.showSaveDialog(null);
-        file
+        file;
     }
 }
