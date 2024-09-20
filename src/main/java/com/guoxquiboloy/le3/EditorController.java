@@ -24,10 +24,6 @@ public class EditorController {
     @FXML Button saveButton;
     @FXML MenuButton fontButton; 
     @FXML MenuButton fontStyleOne; 
-    @FXML MenuButton fontStyleTwo; 
-    @FXML MenuButton fontStyleThree; 
-    @FXML MenuButton fontStyleFour; 
-    @FXML MenuButton fontStyleFive; 
     @FXML Button fontSizePlusButton;
     @FXML Button fontSizeMinButton;
     @FXML Button colorButtonOne;
@@ -86,14 +82,13 @@ public class EditorController {
 
     @FXML
     private void fontChange() throws IOException{
-        
     }
 
-    @FXML
-    private void styleOne() throws IOException{
-        Font newfont = Font.font("Arial"); 
-        typeArea.setFont(newfont);
-    }
+    // @FXML
+    // private void styleOne() throws IOException{
+    //     Font newfont = Font.font("Arial"); 
+    //     typeArea.setFont(newfont);
+    // }
     
     @FXML
     private void fontSizePlus() throws IOException{
