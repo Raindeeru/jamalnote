@@ -16,13 +16,13 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Font Style" textAlignment="CENTER">
+                  <MenuButton fx:id="fontButton" mnemonicParsing="false" onAction="#fontChange" prefHeight="25.0" prefWidth="118.0" text="MenuButton" textAlignment="CENTER">
                     <items>
                       <MenuItem fx:id="fontStyle1" mnemonicParsing="false" onAction="#styleOne" text="Arial" />
                       <MenuItem fx:id="fontStyle2" mnemonicParsing="false" onAction="#styleTwo" text="Calibri" />
                         <MenuItem fx:id="fontStyle3" mnemonicParsing="false" onAction="#styleThree" text="Times New Roman" />
                         <MenuItem fx:id="fontStyle4" mnemonicParsing="false" onAction="#styleFour" text="Roboto" />
-                        <MenuItem fx:id="fontStyle5" mnemonicParsing="false" onAction="#styleFive" text="Open Sans" />
+                        <MenuItem fx:id="fontStyle5" mnemonicParsing="false" onAction="#styleFive" text="Georgia" />
                     </items>
                      <padding>
                         <Insets right="10.0" />
@@ -35,7 +35,7 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="101.0" text="Font Size" textAlignment="CENTER" />
+                  <Label prefHeight="17.0" prefWidth="69.0" text="Font Size " />
                   <Button fx:id="fontSizePlusButton" mnemonicParsing="false" onAction="#fontSizePlus" prefHeight="25.0" prefWidth="25.0" text="+" />
                   <Button fx:id="fontSizeMinButton" mnemonicParsing="false" onAction="#fontSizeMin" prefHeight="25.0" prefWidth="25.0" text="-" />
                </children>
@@ -47,7 +47,7 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="101.0" text="Font Color" textAlignment="CENTER" />
+                        <Label prefHeight="17.0" prefWidth="75.0" text="Font Color" />
                         <Button fx:id="colorButtonOne" mnemonicParsing="false" onAction="#colorOne" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #FFC0CB;" />
                         <Button fx:id="colorButtonTwo" mnemonicParsing="false" onAction="#colorTwo" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #C3B1E1;" />
                         <Button fx:id="colorButtonThree" mnemonicParsing="false" onAction="#colorThree" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #F89880;" />
