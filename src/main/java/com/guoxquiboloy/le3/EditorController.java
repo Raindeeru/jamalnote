@@ -23,7 +23,7 @@ public class EditorController {
     @FXML TextArea typeArea;
     @FXML Button saveButton;
     @FXML MenuButton fontButton; 
-     
+    @FXML MenuItem fontStyle1; 
     @FXML Button fontSizePlusButton;
     @FXML Button fontSizeMinButton;
     @FXML Button colorButtonOne;
@@ -82,6 +82,10 @@ public class EditorController {
 
     @FXML
     private void fontChange() throws IOException{
+    }
+
+    @FXML
+    private void styleOne() throws IOException{
     }
 
     @FXML
