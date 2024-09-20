@@ -96,6 +96,7 @@ public class EditorController {
 
     @FXML
     private void Save() throws IOException{
+        BackupandRestore.clearBackup();
         FileChooser saveFile = new FileChooser();
         saveFile.getExtensionFilters().add(
             new FileChooser.ExtensionFilter("TEXT", "*.txt")
