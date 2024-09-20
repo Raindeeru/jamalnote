@@ -100,4 +100,9 @@ public class EditorController {
         System.out.println("New font size is " + size);
     }
 
+    @FXML
+    private void colorOne() throws IOException{
+        
+    }
+
 }
