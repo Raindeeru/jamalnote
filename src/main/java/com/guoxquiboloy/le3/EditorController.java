@@ -10,6 +10,8 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -20,7 +22,7 @@ import javafx.stage.Stage;
 public class EditorController {
     @FXML TextArea typeArea;
     @FXML Button saveButton;
-    @FXML Button fontButton; 
+    @FXML MenuButton fontButton; 
     @FXML Button fontSizePlusButton;
     @FXML Button fontSizeMinButton;
     @FXML Button textColorButton;
@@ -70,5 +72,10 @@ public class EditorController {
             textFromFile += (char)i;
         }
         typeArea.setText(textFromFile);
+    }
+
+    @FXML
+    private void fontChange() throws IOException{
+       
     }
 }

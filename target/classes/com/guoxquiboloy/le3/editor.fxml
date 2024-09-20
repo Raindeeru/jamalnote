@@ -20,6 +20,9 @@
                     <items>
                       <MenuItem mnemonicParsing="false" text="Arial" />
                       <MenuItem mnemonicParsing="false" text="Calibri" />
+                        <MenuItem mnemonicParsing="false" text="Times New Roman" />
+                        <MenuItem mnemonicParsing="false" text="Verdana" />
+                        <MenuItem mnemonicParsing="false" text="Courier New" />
                     </items>
                      <padding>
                         <Insets right="10.0" />
