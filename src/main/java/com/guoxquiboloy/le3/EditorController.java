@@ -23,6 +23,11 @@ public class EditorController {
     @FXML TextArea typeArea;
     @FXML Button saveButton;
     @FXML MenuButton fontButton; 
+    @FXML MenuButton fontStyleOne; 
+    @FXML MenuButton fontStyleTwo; 
+    @FXML MenuButton fontStyleThree; 
+    @FXML MenuButton fontStyleFour; 
+    @FXML MenuButton fontStyleFive; 
     @FXML Button fontSizePlusButton;
     @FXML Button fontSizeMinButton;
     @FXML Button colorButtonOne;
@@ -83,14 +88,18 @@ public class EditorController {
     private void fontChange() throws IOException{
         
     }
+
+    @FXML
+    private void styleOne() throws IOException{
+        Font newfont = Font.font("Arial"); 
+        typeArea.setFont(newfont);
+    }
     
     @FXML
     private void fontSizePlus() throws IOException{
         Font font = typeArea.getFont();
         double size = font.getSize();
         typeArea.setFont(Font.font(size + 1));
-
-        System.out.println("New font size is " + size);
     }
 
     @FXML
@@ -100,34 +109,32 @@ public class EditorController {
 
         if(size > 7)
             typeArea.setFont(Font.font(size - 1));
-
-        System.out.println("New font size is " + size);
     }
 
     @FXML
     private void colorOne() throws IOException{
-        typeArea.setStyle("-fx-text-fill: pink;"); 
+        typeArea.setStyle("-fx-text-fill:  #FFC0CB;"); 
     }
 
     @FXML
     private void colorTwo() throws IOException{
-        typeArea.setStyle("-fx-text-fill: purple;"); 
+        typeArea.setStyle("-fx-text-fill:  #C3B1E1;"); 
     }
     
 
     @FXML
     private void colorThree() throws IOException{
-        typeArea.setStyle("-fx-text-fill: orange;"); 
+        typeArea.setStyle("-fx-text-fill:    #F89880;"); 
     }
 
     @FXML
     private void colorFour() throws IOException{
-        typeArea.setStyle("-fx-text-fill: lightblue;"); 
+        typeArea.setStyle("-fx-text-fill:  #ADD8E6;"); 
     }
 
     @FXML
     private void colorFive() throws IOException{
-        typeArea.setStyle("-fx-text-fill: black;"); 
+        typeArea.setStyle("-fx-text-fill:  #000000;"); 
     }
 
 }
