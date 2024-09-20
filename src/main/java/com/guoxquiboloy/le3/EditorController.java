@@ -86,42 +86,27 @@ public class EditorController {
 
     @FXML
     private void styleOne() throws IOException{
-        Font font = typeArea.getFont(); 
-        double size = font.getSize(); 
-        Font newFont = Font.font("Arial", size); 
-        typeArea.setFont(newFont);
+        newFont("Airal"); 
     }
 
     @FXML
     private void styleTwo() throws IOException{
-        Font font = typeArea.getFont(); 
-        double size = font.getSize(); 
-        Font newFont = Font.font("Calibri", size); 
-        typeArea.setFont(newFont);
+        newFont("Calibri"); 
     }
 
     @FXML
     private void styleThree() throws IOException{
-        Font font = typeArea.getFont(); 
-        double size = font.getSize(); 
-        Font newFont = Font.font("Times New Roman", size); 
-        typeArea.setFont(newFont);
+        newFont("Times New Roman"); 
     }
 
     @FXML
     private void styleFour() throws IOException{
-        Font font = typeArea.getFont(); 
-        double size = font.getSize(); 
-        Font newFont = Font.font("Roboto", size); 
-        typeArea.setFont(newFont);
+        newFont("Roboto"); 
     }
 
     @FXML
     private void styleFive() throws IOException{
-        Font font = typeArea.getFont(); 
-        double size = font.getSize(); 
-        Font newFont = Font.font("Georgia", size); 
-        typeArea.setFont(newFont);
+        newFont("Georgia"); 
     }
 
     @FXML
@@ -165,4 +150,10 @@ public class EditorController {
         typeArea.setStyle("-fx-text-fill:  #000000;"); 
     }
 
+    @FXML
+    private void newFont(String fontStyle) throws IOException{
+        Font font = typeArea.getFont(); 
+        double size = font.getSize();  
+        typeArea.setFont(Font.font(fontStyle, size));
+    }
 }
