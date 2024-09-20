@@ -110,6 +110,7 @@ public class EditorController {
             writer.close();
             isSaved = true;
         }
+        RecentFileManager.addRecentFile(file);
     }
     public void setEditorText(String text){
         typeArea.setText(text);

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -32,14 +33,22 @@ public class MainController{
         for(String path: paths){
             File file = new File(path);
             Button button = new Button(file.getName());
+            
             button.setPrefWidth(recentFileButton.getPrefWidth());
             button.setPrefHeight(recentFileButton.getPrefHeight());
+
+            recentFileButtons.add(button);
+
             recentFilesBar.getChildren().add(button);
             button.setOnAction(event -> {
                 try{LoadRecentFile(path);}
                 catch(IOException e){throw new RuntimeException(e);}
             });
             recentFiles.add(file);
+        }
+        if (recentFileButtons.size() == 1 && recentFileButtons.get(0).getText().isEmpty()) {
+            recentFileButtons.get(0).setText("No Recent Files");
+            recentFileButtons.get(0).setDisable(true);
         }
         recentFilesBar.getChildren().remove(recentFileButton);
     }

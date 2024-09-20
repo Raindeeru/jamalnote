@@ -12,10 +12,18 @@ public class RecentFileManager {
     
     public static void addRecentFile(File file) throws IOException{
         FileWriter writer = new FileWriter(new File(recentsPath), true);
-        FileReader reader = new FileReader(file);
         FileReader checker = new FileReader(recentsPath);
-        List<String> paths = getPaths(file);
+        List<String> paths = getPaths(new File(recentsPath));
         
+        for(String path: paths){
+            System.out.println(path);
+            System.out.println(file.getAbsolutePath());  
+            if (path.equals(file.getAbsolutePath())) {
+                writer.close();
+                checker.close();                      
+                return;
+            }
+        }
         if (checker.read() != -1) {
             writer.write(',');
         }
@@ -23,7 +31,6 @@ public class RecentFileManager {
         writer.write(file.getAbsolutePath());;
         writer.close();
         checker.close();
-        reader.close();
     }
 
     public static List<String> getPaths(File file) throws IOException{
