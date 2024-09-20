@@ -12,6 +12,7 @@
 
 <VBox alignment="CENTER" prefHeight="405.0" prefWidth="721.0" spacing="20.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.guoxquiboloy.le3.EditorController">
     <children>
+      <Button mnemonicParsing="false" onAction="#BackToMenu" text="Menu" textAlignment="CENTER" />
       <HBox prefHeight="12.0" prefWidth="408.0">
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">

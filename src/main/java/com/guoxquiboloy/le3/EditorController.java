@@ -86,27 +86,42 @@ public class EditorController {
 
     @FXML
     private void styleOne() throws IOException{
-        newFont("Airal"); 
+        Font font = typeArea.getFont(); 
+        double size = font.getSize(); 
+        Font newFont = Font.font("Arial", size); 
+        typeArea.setFont(newFont);
     }
 
     @FXML
     private void styleTwo() throws IOException{
-        newFont("Calibri"); 
+        Font font = typeArea.getFont(); 
+        double size = font.getSize(); 
+        Font newFont = Font.font("Calibri", size); 
+        typeArea.setFont(newFont);
     }
 
     @FXML
     private void styleThree() throws IOException{
-        newFont("Times New Roman"); 
+        Font font = typeArea.getFont(); 
+        double size = font.getSize(); 
+        Font newFont = Font.font("Times New Roman", size); 
+        typeArea.setFont(newFont);
     }
 
     @FXML
     private void styleFour() throws IOException{
-        newFont("Roboto"); 
+        Font font = typeArea.getFont(); 
+        double size = font.getSize(); 
+        Font newFont = Font.font("Roboto", size); 
+        typeArea.setFont(newFont);
     }
 
     @FXML
     private void styleFive() throws IOException{
-        newFont("Georgia"); 
+        Font font = typeArea.getFont(); 
+        double size = font.getSize(); 
+        Font newFont = Font.font("Georgia", size); 
+        typeArea.setFont(newFont);
     }
 
     @FXML
@@ -156,6 +171,8 @@ public class EditorController {
         double size = font.getSize();  
         typeArea.setFont(Font.font(fontStyle, size));
     }
-
+    @FXML private void BackToMenu() throws IOException{
+        App.setRoot("main");
+    }
 
 }
