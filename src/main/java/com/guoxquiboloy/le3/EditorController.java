@@ -1,7 +1,9 @@
 package com.guoxquiboloy.le3;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import javafx.fxml.FXML;
@@ -16,8 +18,19 @@ public class EditorController {
     @FXML Button fontButton; 
     @FXML Button fontSizeButton;
     @FXML Button textColorButton;
+    //Changes mad by Payor, Matthew Josh G.
+    private static TextArea staticTypeArea;
+    private File file;
 
-    private String filePath;
+    @FXML
+    public void initialize() 
+    {
+        staticTypeArea = typeArea;
+    }
+    public static TextArea getTypeArea() 
+    {
+        return staticTypeArea;
+    }
 
     @FXML
     private void Save() throws IOException{
@@ -27,8 +40,8 @@ public class EditorController {
         );
 
         String text = typeArea.getText();
-        saveFile.setTitle("Hatdog");
-        File file = saveFile.showSaveDialog(null);
+        saveFile.setTitle("Save File");
+        file = saveFile.showSaveDialog(null);
         FileWriter writer = new FileWriter(file);
         if (file != null) {
             writer.write(text);
@@ -39,7 +52,17 @@ public class EditorController {
         typeArea.setText(text);
     }
 
-    public void setFilePath(String path){
-        filePath = path;
+    public void setFile(File file) throws IOException{
+        this.file = file;
+        
+        FileReader reader = new FileReader(file);
+        
+        String textFromFile = "";
+
+        int i;
+        while ((i = reader.read()) != -1) {
+            textFromFile += (char)i;
+        }
+        typeArea.setText(textFromFile);
     }
 }

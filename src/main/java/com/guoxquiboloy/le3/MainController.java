@@ -26,13 +26,11 @@ public class MainController{
 
     @FXML
     private void LoadFile() throws IOException{
-        System.out.println("Pinindot mo Load File");
         FileChooser loader = new FileChooser();
         loader.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
         File fileToLoad = loader.showOpenDialog(stage);
         if (fileToLoad != null) {
-            String path = fileToLoad.getAbsolutePath();
-            System.out.println(path);
+            App.switchToEditor(fileToLoad);
         }
     }
 
