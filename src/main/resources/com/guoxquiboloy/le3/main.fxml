@@ -13,19 +13,19 @@
 
 <AnchorPane style="-fx-background-color: #e78fb2;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.guoxquiboloy.le3.MainController">
    <children>
-      <HBox layoutY="1.0" prefHeight="500.0" prefWidth="666.0" style="-fx-background-color: #e78fb2;">
+      <HBox layoutY="1.0" prefHeight="500.0" style="-fx-background-color: #e78fb2;">
          <children>
-            <VBox alignment="CENTER" prefHeight="500.0" prefWidth="392.0" style="-fx-background-color: #ffcfe7;">
+            <VBox alignment="CENTER" maxWidth="-Infinity" prefHeight="500.0" prefWidth="194.0" style="-fx-background-color: #ffcfe7;">
                <children>
-                  <ImageView fitHeight="78.0" fitWidth="441.0" pickOnBounds="true" preserveRatio="true" rotate="-3.4">
-                     <image>
-                        <Image url="@../../../../../../JamalNote-9-20-2024.png" />
-                     </image>
+                  <ImageView fitHeight="71.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true" rotate="-3.4">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
+                     <image>
+                        <Image url="@../../../../../../target/classes/JamalLogo.png" />
+                     </image>
                   </ImageView>
-                  <VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="212.0" prefWidth="282.0">
+                  <VBox alignment="TOP_CENTER" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="212.0" prefWidth="282.0">
                      <children>
                         <Button fx:id="newFileButton" mnemonicParsing="false" onAction="#OpenNewFile" prefWidth="200.0" rotate="-1.0" style="-fx-background-color: #F5F5F5;" text="New File" textFill="#f200a4">
                            <VBox.margin>
@@ -55,7 +55,7 @@
                   </VBox>
                </children>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="500.0" prefWidth="614.0" style="-fx-background-color: #F5F5F5;">
+            <VBox alignment="CENTER" prefHeight="500.0" style="-fx-background-color: #F5F5F5;">
                <children>
                   <Label rotate="-1.0" text="Recent Files" textFill="#f200a4" VBox.vgrow="ALWAYS">
                      <font>
@@ -65,11 +65,11 @@
                         <Insets bottom="30.0" top="20.0" />
                      </VBox.margin>
                   </Label>
-                  <ScrollPane hbarPolicy="NEVER" prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #d61a93;">
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="500.0" style="-fx-background-color: #d61a93;">
                     <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="388.0" style="-fx-background-color: #f9dd9a;">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" style="-fx-background-color: #f9dd9a;">
                            <children>
-                              <VBox fx:id="recentFilesBar" alignment="TOP_CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="500.0" prefWidth="388.0" style="-fx-background-color: #ffcfe7;">
+                              <VBox fx:id="recentFilesBar" alignment="TOP_CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="500.0" style="-fx-background-color: #ffcfe7;">
                                  <children>
                                     <Button fx:id="recentFileButton" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="53.0" prefWidth="330.0" style="-fx-background-color: #fd99cb;" text="sample.txt" textFill="WHITE">
                                        <font>
