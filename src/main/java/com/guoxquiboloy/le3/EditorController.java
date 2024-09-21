@@ -172,7 +172,7 @@ public class EditorController {
     private void fontSizePlus() throws IOException{
         Font font = typeArea.getFont();
         double size = font.getSize();
-        typeArea.setFont(Font.font(size + 1));
+        typeArea.setFont(Font.font(font.getName(), size + 5));
     }
 
     @FXML
@@ -181,7 +181,7 @@ public class EditorController {
         double size = font.getSize();
 
         if(size > 7)
-            typeArea.setFont(Font.font(size - 1));
+            typeArea.setFont(Font.font(font.getName(), size - 5));
     }
 
     @FXML

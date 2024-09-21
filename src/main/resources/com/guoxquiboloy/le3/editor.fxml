@@ -59,7 +59,7 @@
             <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
          </padding>
       </HBox>
-      <TextArea fx:id="typeArea" prefHeight="342.0" prefWidth="681.0" style="-fx-border-radius: 111;" wrapText="true" VBox.vgrow="ALWAYS">
+      <TextArea fx:id="typeArea" prefHeight="342.0" prefWidth="681.0" scaleShape="false" style="-fx-border-radius: 111;" wrapText="true" VBox.vgrow="ALWAYS">
          <font>
             <Font name="Arial" size="12.0" />
          </font></TextArea>

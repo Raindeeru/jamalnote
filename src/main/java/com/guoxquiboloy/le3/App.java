@@ -70,7 +70,9 @@ public class App extends Application {
         Scene newScene = new Scene(root);
         newStage.setScene(newScene);
         oldStage.fireEvent(new WindowEvent(oldStage, WindowEvent.WINDOW_CLOSE_REQUEST));
-        newStage.show();
+        if (!oldStage.isShowing()) {
+            newStage.show();
+        }
 
     }
 
