@@ -1,7 +1,6 @@
 package com.guoxquiboloy.le3;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,6 +8,7 @@ import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,21 +35,43 @@ public class App extends Application {
         }
     }
 
-    public static void switchToEditor()throws IOException {
-        App.setRoot("editor");
+    public static void switchToEditor(Stage oldStage)throws IOException {
+        Stage editorStage = new Stage();
+        Parent editor = loadFXML("editor");
+        Scene editorScene = new Scene(editor);
+        editorStage.setScene(editorScene);
+        oldStage.close();
+        editorStage.show();
     }
 
     //For Loading Files
-    public static void switchToEditor(File file)throws IOException{
+    public static void switchToEditor(File file, Stage oldStage)throws IOException{
+        Stage editorStage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("editor.fxml"));
         Parent editor = fxmlLoader.load();
+        Scene editorScene = new Scene(editor);
+        editorStage.setScene(editorScene);
         EditorController editorController = fxmlLoader.getController();
+
         editorController.setFile(file);
-        scene.setRoot(editor); 
+        editorController.setFilePath(file.getAbsolutePath());
+
+        oldStage.close();
+        editorStage.show();
     }
 
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
+    }
+
+    static void switchToMenu(Stage oldStage) throws IOException{
+        Stage newStage = new Stage();
+        Parent root = loadFXML("main");
+        Scene newScene = new Scene(root);
+        newStage.setScene(newScene);
+        oldStage.fireEvent(new WindowEvent(oldStage, WindowEvent.WINDOW_CLOSE_REQUEST));
+        newStage.show();
+
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
@@ -85,7 +107,7 @@ public class App extends Application {
                 System.out.println(result.get());
                 if (result.isPresent() && result.get().equals("Backup Restored")) 
                 {
-                    try{switchToEditor(new File("backup.txt"));}
+                    try{switchToEditor(new File("backup.txt"), stage);}
                     catch(IOException e){throw new RuntimeException(e);}
                 
                 }
@@ -94,15 +116,7 @@ public class App extends Application {
         catch(IOException e){throw new RuntimeException(e);}
         
     }
-    //Create a backup when the application closes
-    @Override
-    public void stop() 
-    {
-        if (EditorController.getTypeArea().getText().trim().length() > 0) 
-        {
-            BackupandRestore.backupUserWork(EditorController.getTypeArea().getText());
-        }
-    }
+
     
     public static void main(String[] args) {
         launch();

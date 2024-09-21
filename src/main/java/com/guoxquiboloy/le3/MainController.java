@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -36,6 +35,9 @@ public class MainController{
             
             button.setPrefWidth(recentFileButton.getPrefWidth());
             button.setPrefHeight(recentFileButton.getPrefHeight());
+            button.setStyle(recentFileButton.getStyle());
+            button.setTextFill(recentFileButton.getTextFill());
+            button.setFont(recentFileButton.getFont());
 
             recentFileButtons.add(button);
 
@@ -55,7 +57,7 @@ public class MainController{
 
     @FXML
     private void OpenNewFile() throws IOException{
-        App.switchToEditor();
+        App.switchToEditor((Stage)closeButton.getScene().getWindow());
     }
 
     @FXML
@@ -65,7 +67,7 @@ public class MainController{
         File fileToLoad = loader.showOpenDialog(stage);
         RecentFileManager.addRecentFile(fileToLoad);
         if (fileToLoad != null) {
-            App.switchToEditor(fileToLoad);
+            App.switchToEditor(fileToLoad, (Stage)closeButton.getScene().getWindow());
         }
     }
 
@@ -80,7 +82,7 @@ public class MainController{
         File fileToLoad = new File(filePath);
         RecentFileManager.addRecentFile(fileToLoad);
         if (fileToLoad != null) {
-            App.switchToEditor(fileToLoad);
+            App.switchToEditor(fileToLoad, (Stage)closeButton.getScene().getWindow());
         }
     }
 }

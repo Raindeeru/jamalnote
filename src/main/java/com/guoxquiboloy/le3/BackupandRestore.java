@@ -48,7 +48,7 @@ public class BackupandRestore
     }
 
     public static void clearBackup() throws IOException{
-        FileWriter clearer = new FileWriter(BACKUP_FILE);
+        FileWriter clearer = new FileWriter(BACKUP_FILE, false);
         clearer.write("");
         clearer.close();
     }

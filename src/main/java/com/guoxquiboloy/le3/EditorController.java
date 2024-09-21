@@ -1,13 +1,10 @@
 package com.guoxquiboloy.le3;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import javafx.event.ActionEvent;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -15,11 +12,8 @@ import javafx.scene.control.ButtonType;
 import javafx.stage.WindowEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -39,14 +33,14 @@ public class EditorController {
     @FXML Button colorButtonThree;
     @FXML Button colorButtonFour;
     @FXML Button colorButtonFive;
-    
-    private boolean isSaved = false;
-    
+        
     private Stage stage;
 
     //Changes mad by Payor, Matthew Josh G.
     private static TextArea staticTypeArea;
+    private static String originalText = "";
     private File file;
+    private String filePath = "";
 
     @FXML
     public void initialize() 
@@ -60,7 +54,7 @@ public class EditorController {
     }
 
     private void handleCloseRequest(WindowEvent event) {
-        if (!isSaved) {
+        if (this.CheckIfChanged() && !filePath.equals("")) {
             Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("Unsaved Changes");
             alert.setHeaderText("You have unsaved changes.");
@@ -79,9 +73,9 @@ public class EditorController {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    Platform.exit();
                 } else if (response == discardButton) {
-                    Platform.exit();
+                    BackupandRestore.backupUserWork(typeArea.getText());
+                    ((Stage)this.typeArea.getScene().getWindow()).close();
                 } else {
                     event.consume(); // Cancel the close request
                 }
@@ -97,6 +91,7 @@ public class EditorController {
     @FXML
     private void Save() throws IOException{
         BackupandRestore.clearBackup();
+
         FileChooser saveFile = new FileChooser();
         saveFile.getExtensionFilters().add(
             new FileChooser.ExtensionFilter("TEXT", "*.txt")
@@ -109,7 +104,6 @@ public class EditorController {
         if (file != null) {
             writer.write(text);
             writer.close();
-            isSaved = true;
         }
         RecentFileManager.addRecentFile(file);
     }
@@ -129,6 +123,7 @@ public class EditorController {
             textFromFile += (char) i;
         }
         typeArea.setText(textFromFile);
+        originalText = textFromFile;
         reader.close();
         BackupandRestore.clearBackup();
     }
@@ -221,7 +216,16 @@ public class EditorController {
         typeArea.setFont(Font.font(fontStyle, size));
     }
     @FXML private void BackToMenu() throws IOException{
-        App.setRoot("main");
+        App.switchToMenu((Stage)typeArea.getScene().getWindow());
     }
 
+    public void setFilePath(String filePath){
+        this.filePath = filePath;
+    }
+
+    public boolean CheckIfChanged(){
+        System.out.println(originalText);
+        System.out.println(typeArea.getText());
+        return !originalText.equals(typeArea.getText());
+    }
 }
