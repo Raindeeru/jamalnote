@@ -48,7 +48,7 @@ public class MainController{
             });
             recentFiles.add(file);
         }
-        if (recentFileButtons.size() == 1 && recentFileButtons.get(0).getText().isEmpty()) {
+        if (recentFileButtons.size() == 1 || recentFileButtons.get(0).getText().isEmpty()) {
             recentFileButtons.get(0).setText("No Recent Files");
             recentFileButtons.get(0).setDisable(true);
         }

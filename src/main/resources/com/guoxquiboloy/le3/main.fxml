@@ -32,7 +32,7 @@
                               <Insets bottom="20.0" top="40.0" />
                            </VBox.margin>
                            <font>
-                              <Font name="HelveticaRounded-Bold" size="13.0" />
+                              <Font name="Rockwell" size="13.0" />
                            </font>
                         </Button>
                         <Button fx:id="loadButton" mnemonicParsing="false" onAction="#LoadFile" prefWidth="200.0" rotate="2.0" style="-fx-background-color: #F5F5F5;" text="Load File" textAlignment="CENTER" textFill="#f200a4">
@@ -40,7 +40,7 @@
                               <Insets bottom="20.0" top="20.0" />
                            </VBox.margin>
                            <font>
-                              <Font name="HelveticaRounded-Bold" size="13.0" />
+                              <Font name="Rockwell" size="13.0" />
                            </font>
                         </Button>
                         <Button fx:id="closeButton" onAction="#Close" prefHeight="44.0" prefWidth="200.0" rotate="-1.0" style="-fx-background-color: #f200a4;" text="Close" textFill="WHITE">
@@ -48,7 +48,7 @@
                               <Insets bottom="20.0" top="20.0" />
                            </VBox.margin>
                            <font>
-                              <Font name="HelveticaRounded-Bold" size="13.0" />
+                              <Font name="Rockwell" size="13.0" />
                            </font>
                         </Button>
                      </children>
@@ -59,7 +59,7 @@
                <children>
                   <Label rotate="-1.0" text="Recent Files" textFill="#f200a4" VBox.vgrow="ALWAYS">
                      <font>
-                        <Font name="HelveticaRounded-Bold" size="25.0" />
+                        <Font name="Rockwell Bold" size="25.0" />
                      </font>
                      <VBox.margin>
                         <Insets bottom="30.0" top="20.0" />
@@ -67,17 +67,20 @@
                   </Label>
                   <ScrollPane hbarPolicy="NEVER" prefHeight="500.0" style="-fx-background-color: #d61a93;">
                     <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" style="-fx-background-color: #f9dd9a;">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="330.0" style="-fx-background-color: #f9dd9a;">
                            <children>
-                              <VBox fx:id="recentFilesBar" alignment="TOP_CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="500.0" style="-fx-background-color: #ffcfe7;">
+                              <VBox fx:id="recentFilesBar" alignment="TOP_CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="398.0" prefWidth="330.0" spacing="3.0" style="-fx-background-color: #ffcfe7;">
                                  <children>
-                                    <Button fx:id="recentFileButton" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="53.0" prefWidth="330.0" style="-fx-background-color: #fd99cb;" text="sample.txt" textFill="WHITE">
+                                    <Button fx:id="recentFileButton" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="54.0" prefWidth="342.0" style="-fx-background-color: #fd99cb;" text="sample.txt" textFill="WHITE">
                                        <font>
-                                          <Font name="HelveticaRounded-Bold" size="18.0" />
+                                          <Font name="Rockwell Italic" size="18.0" />
                                        </font>
                                        <VBox.margin>
                                           <Insets />
                                        </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" />
+                                       </padding>
                                     </Button>
                                  </children>
                               </VBox>
