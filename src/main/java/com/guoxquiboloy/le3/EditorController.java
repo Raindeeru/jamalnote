@@ -54,7 +54,7 @@ public class EditorController {
     }
 
     private void handleCloseRequest(WindowEvent event) {
-        if (this.CheckIfChanged() && !filePath.equals("")) {
+        if (this.CheckIfChanged() || !filePath.equals("")) {
             Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("Unsaved Changes");
             alert.setHeaderText("You have unsaved changes.");
