@@ -28,11 +28,9 @@ public class MainController{
     public void initialize() throws IOException{
         File recentFile = new File("recentFiles.csv");
         List<String> paths = RecentFileManager.getPaths(recentFile);
-        System.out.println(paths);
         for(String path: paths){
             File file = new File(path);
             Button button = new Button(file.getName());
-            System.out.println(path);
             button.setPrefWidth(recentFileButton.getPrefWidth());
             button.setPrefHeight(recentFileButton.getPrefHeight());
             button.setStyle(recentFileButton.getStyle());

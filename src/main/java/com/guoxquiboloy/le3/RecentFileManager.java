@@ -16,8 +16,6 @@ public class RecentFileManager {
         List<String> paths = getPaths(new File(recentsPath));
         
         for(String path: paths){
-            System.out.println(path);
-            System.out.println(file.getAbsolutePath());  
             if (path.equals(file.getAbsolutePath())) {
                 writer.close();
                 checker.close();                      

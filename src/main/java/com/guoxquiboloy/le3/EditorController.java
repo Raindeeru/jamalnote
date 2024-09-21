@@ -38,7 +38,6 @@ public class EditorController {
         
     private Stage stage;
 
-    //Changes mad by Payor, Matthew Josh G.
     private static TextArea staticTypeArea;
     private static String originalText = "";
     private File file;

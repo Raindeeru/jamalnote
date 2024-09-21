@@ -27,8 +27,6 @@ public class App extends Application {
         stage.setScene(scene);
         stage.show();
 
-        //Changes made by Payor, Matthew Josh G.
-        //Checks for backup file on startup
         if (BackupandRestore.backupChecker())
         {
             promptrestoreUserWork(stage);
@@ -108,7 +106,6 @@ public class App extends Application {
             if(backupExist){
                 Optional<String> result = dialog.showAndWait();
                 //Application will restore from backup
-                System.out.println(result.get());
                 if (result.isPresent() && result.get().equals("Backup Restored")) 
                 {
                     try{switchToEditor(new File("backup.txt"), stage);}
