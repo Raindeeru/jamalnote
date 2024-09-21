@@ -11,7 +11,7 @@ import java.io.FileWriter;
 //Main Program
 public class BackupandRestore 
 {
-    private static final String BACKUP_FILE = "backup.txt";
+    public static final String BACKUP_FILE = "backup.txt";
     //Creates a backup file
     public static void backupUserWork(String text)
     {
@@ -48,6 +48,7 @@ public class BackupandRestore
     }
 
     public static void clearBackup() throws IOException{
+        System.out.println("hello");
         FileWriter clearer = new FileWriter(BACKUP_FILE, false);
         clearer.write("");
         clearer.close();

@@ -54,7 +54,9 @@ public class App extends Application {
         EditorController editorController = fxmlLoader.getController();
 
         editorController.setFile(file);
-        editorController.setFilePath(file.getAbsolutePath());
+        if (!file.getPath().equals(BackupandRestore.BACKUP_FILE)) {
+            editorController.setFilePath(file.getAbsolutePath());   
+        }
 
         oldStage.close();
         editorStage.show();

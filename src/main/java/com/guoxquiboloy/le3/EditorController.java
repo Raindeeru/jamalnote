@@ -54,7 +54,7 @@ public class EditorController {
     }
 
     private void handleCloseRequest(WindowEvent event) {
-        if (this.CheckIfChanged() || !filePath.equals("")) {
+        if (this.CheckIfChanged() || filePath.isEmpty()) {
             Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("Unsaved Changes");
             alert.setHeaderText("You have unsaved changes.");
@@ -91,21 +91,27 @@ public class EditorController {
     @FXML
     private void Save() throws IOException{
         BackupandRestore.clearBackup();
-
-        FileChooser saveFile = new FileChooser();
-        saveFile.getExtensionFilters().add(
-            new FileChooser.ExtensionFilter("TEXT", "*.txt")
-        );
-
         String text = typeArea.getText();
-        saveFile.setTitle("Save File");
-        file = saveFile.showSaveDialog(null);
+        if (filePath.isEmpty()) {
+            FileChooser saveFile = new FileChooser();
+            saveFile.getExtensionFilters().add(
+                new FileChooser.ExtensionFilter("TEXT", "*.txt")
+            );
+    
+            saveFile.setTitle("Save File");
+            file = saveFile.showSaveDialog(null);   
+            filePath = file.getAbsolutePath();         
+        }
+        else file = new File(filePath);
+
         FileWriter writer = new FileWriter(file);
+
         if (file != null) {
             writer.write(text);
             writer.close();
-        }
-        RecentFileManager.addRecentFile(file);
+            originalText = text;
+            RecentFileManager.addRecentFile(file);
+        }       
     }
     public void setEditorText(String text){
         typeArea.setText(text);
@@ -226,6 +232,7 @@ public class EditorController {
     public boolean CheckIfChanged(){
         System.out.println(originalText);
         System.out.println(typeArea.getText());
+        System.out.println(filePath.isEmpty());
         return !originalText.equals(typeArea.getText());
     }
 }
