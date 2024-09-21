@@ -63,9 +63,9 @@ public class MainController{
         FileChooser loader = new FileChooser();
         loader.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
         File fileToLoad = loader.showOpenDialog(stage);
-        RecentFileManager.addRecentFile(fileToLoad);
         if (fileToLoad != null) {
             App.switchToEditor(fileToLoad, (Stage)closeButton.getScene().getWindow());
+            RecentFileManager.addRecentFile(fileToLoad);
         }
     }
 
