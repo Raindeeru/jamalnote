@@ -22,7 +22,7 @@
                         <Insets />
                      </VBox.margin>
                      <image>
-                        <Image url="@../../../../../../target/classes/JamalLogo.png" />
+                        <Image url="@JamalLogo.png" />
                      </image>
                   </ImageView>
                   <VBox alignment="TOP_CENTER" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="212.0" prefWidth="282.0">
