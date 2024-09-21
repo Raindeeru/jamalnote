@@ -9,6 +9,7 @@ import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.MenuButton;
 import javafx.stage.WindowEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -21,6 +22,7 @@ import javafx.stage.Stage;
 public class EditorController {
     @FXML TextArea typeArea;
     @FXML Button saveButton;
+    @FXML MenuButton fontButtons;
     @FXML MenuItem fontStyle1; 
     @FXML MenuItem fontStyle2; 
     @FXML MenuItem fontStyle3; 
@@ -46,7 +48,7 @@ public class EditorController {
     public void initialize() 
     {
         staticTypeArea = typeArea;
-
+        fontButtons.setText(typeArea.getFont().getName());
         Platform.runLater(() -> {
             stage = (Stage) typeArea.getScene().getWindow();
             stage.setOnCloseRequest(event -> handleCloseRequest(event));
@@ -54,7 +56,7 @@ public class EditorController {
     }
 
     private void handleCloseRequest(WindowEvent event) {
-        if (this.CheckIfChanged() || filePath.isEmpty()) {
+        if (this.CheckIfChanged() || (filePath.isEmpty() && !typeArea.getText().isEmpty())) {
             Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("Unsaved Changes");
             alert.setHeaderText("You have unsaved changes.");
@@ -130,6 +132,10 @@ public class EditorController {
         }
         typeArea.setText(textFromFile);
         originalText = textFromFile;
+
+        if (!file.getPath().equals(BackupandRestore.BACKUP_FILE)) {
+            ((Stage)typeArea.getScene().getWindow()).setTitle(file.getName());
+        }
         reader.close();
         BackupandRestore.clearBackup();
     }
@@ -140,6 +146,7 @@ public class EditorController {
         double size = font.getSize(); 
         Font newFont = Font.font("Arial", size); 
         typeArea.setFont(newFont);
+        fontButtons.setText("Arial");
     }
 
     @FXML
@@ -148,6 +155,7 @@ public class EditorController {
         double size = font.getSize(); 
         Font newFont = Font.font("Calibri", size); 
         typeArea.setFont(newFont);
+        fontButtons.setText("Calibri");
     }
 
     @FXML
@@ -156,6 +164,7 @@ public class EditorController {
         double size = font.getSize(); 
         Font newFont = Font.font("Times New Roman", size); 
         typeArea.setFont(newFont);
+        fontButtons.setText("Times New Roman");
     }
 
     @FXML
@@ -164,6 +173,7 @@ public class EditorController {
         double size = font.getSize(); 
         Font newFont = Font.font("Roboto", size); 
         typeArea.setFont(newFont);
+        fontButtons.setText("Roboto");
     }
 
     @FXML
@@ -172,6 +182,7 @@ public class EditorController {
         double size = font.getSize(); 
         Font newFont = Font.font("Georgia", size); 
         typeArea.setFont(newFont);
+        fontButtons.setText("Georgia");
     }
 
     @FXML
@@ -215,12 +226,7 @@ public class EditorController {
         typeArea.setStyle("-fx-text-fill:  #000000;"); 
     }
 
-    @FXML
-    private void newFont(String fontStyle) throws IOException{
-        Font font = typeArea.getFont(); 
-        double size = font.getSize();  
-        typeArea.setFont(Font.font(fontStyle, size));
-    }
+
     @FXML private void BackToMenu() throws IOException{
         App.switchToMenu((Stage)typeArea.getScene().getWindow());
     }
@@ -230,9 +236,6 @@ public class EditorController {
     }
 
     public boolean CheckIfChanged(){
-        System.out.println(originalText);
-        System.out.println(typeArea.getText());
-        System.out.println(filePath.isEmpty());
         return !originalText.equals(typeArea.getText());
     }
 }

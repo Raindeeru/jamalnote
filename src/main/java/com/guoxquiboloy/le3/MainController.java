@@ -32,7 +32,7 @@ public class MainController{
         for(String path: paths){
             File file = new File(path);
             Button button = new Button(file.getName());
-            
+            System.out.println(path);
             button.setPrefWidth(recentFileButton.getPrefWidth());
             button.setPrefHeight(recentFileButton.getPrefHeight());
             button.setStyle(recentFileButton.getStyle());
@@ -40,7 +40,7 @@ public class MainController{
             button.setFont(recentFileButton.getFont());
 
             recentFileButtons.add(button);
-
+            
             recentFilesBar.getChildren().add(button);
             button.setOnAction(event -> {
                 try{LoadRecentFile(path);}
@@ -48,7 +48,7 @@ public class MainController{
             });
             recentFiles.add(file);
         }
-        if (recentFileButtons.size() == 1 || recentFileButtons.get(0).getText().isEmpty()) {
+        if (recentFileButtons.get(0).getText().isEmpty()) {
             recentFileButtons.get(0).setText("No Recent Files");
             recentFileButtons.get(0).setDisable(true);
         }

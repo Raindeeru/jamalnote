@@ -22,7 +22,7 @@
             </HBox>
             <HBox prefHeight="25.0" prefWidth="343.0" spacing="3.0">
                <children>
-                  <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #f2d8e3; -fx-border-color: #2c2c2c; -fx-border-radius: 10;" text="Font" textAlignment="CENTER">
+                  <MenuButton fx:id="fontButtons" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #f2d8e3; -fx-border-color: #2c2c2c; -fx-border-radius: 10;" text="Font" textAlignment="CENTER">
                     <items>
                       <MenuItem fx:id="fontStyle1" mnemonicParsing="false" onAction="#styleOne" text="Arial" />
                       <MenuItem fx:id="fontStyle2" mnemonicParsing="false" onAction="#styleTwo" text="Calibri" />
